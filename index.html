@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토탈스테이션 장비 대여 서비스</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="lab-info">
+                    <img src="sparo.png" alt="SPARO Lab Logo" class="lab-logo">
+                    <div class="lab-text">
+                        <h1>SPARO Lab</h1>
+                        <p class="lab-name">인하대학교 공간정보연구실</p>
+                    </div>
+                </div>
+                <div class="header-title">
+                    <h2>토탈스테이션 장비 대여</h2>
+                    <p class="subtitle">전문 측량 장비 대여 서비스</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#equipment">장비 목록</a></li>
+                <li><a href="#rental">대여 신청</a></li>
+                <li><a href="#contact">문의</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="equipment">
+            <h2>대여 가능 장비</h2>
+
+            <div class="equipment-single">
+                <!-- Trimble SX12 -->
+                <div class="equipment-card-single">
+                    <div class="equipment-image-large">
+                        <img src="https://geosys.co.kr/wp-content/uploads/2021/03/001sx12-1.png" alt="Trimble SX12">
+                    </div>
+                    <div class="equipment-info-detailed">
+                        <h3>Trimble SX12</h3>
+                        <p class="equipment-type">스캐닝 토탈 스테이션</p>
+                        <p class="equipment-description">
+                            혁신적인 기술과 간편하고 직관적인 기능을 결합한 최첨단 스캐닝 토탈 스테이션입니다.
+                            3D 스캐닝, 이미징, 측량 기능을 하나의 장비로 통합하여 전문적인 측량 프로젝트에 최적화되어 있습니다.
+                        </p>
+                        <h4>주요 사양</h4>
+                        <ul class="features">
+                            <li>각정밀도: 1″ (측정모드) / 5″ (스캔모드)</li>
+                            <li>스캔속도: 26,600 포인트/초</li>
+                            <li>스캔거리: 600m</li>
+                            <li>측정거리: 프리즘 5km / 무타겟 0.8km</li>
+                            <li>스캔범위: 300° / 360°</li>
+                            <li>카메라: 8.1 MP, 107배 줌</li>
+                            <li>그린 레이저 포인터 (520nm)</li>
+                            <li>방진/방수 IP55 등급</li>
+                        </ul>
+                        <div class="equipment-buttons">
+                            <a href="sx12-detail.html" class="btn-detail">상세정보 보기</a>
+                            <button class="btn-rental-large" onclick="scrollToRental()">대여 신청하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rental">
+            <h2>대여 신청</h2>
+
+            <div class="rental-info">
+                <div class="info-box">
+                    <h3>💰 대여 요금</h3>
+                    <p><strong>시간당:</strong> 25,000원</p>
+                    <p><strong>최소 대여시간:</strong> 25시간</p>
+                </div>
+                <div class="info-box">
+                    <h3>📋 대여 절차</h3>
+                    <ol>
+                        <li>아래 신청서 작성</li>
+                        <li>담당자 확인 및 연락</li>
+                        <li>대여 일정 확정</li>
+                        <li>장비 수령 및 사용</li>
+                    </ol>
+                </div>
+                <div class="info-box">
+                    <h3>📞 문의</h3>
+                    <p>전화: 010-3488-5952</p>
+                    <p>이메일: yg.cho@inha.ac.kr</p>
+                    <p>운영: SPARO Lab (인하대학교)</p>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <h3>대여 신청서</h3>
+                <form id="rentalForm">
+                    <div class="form-group">
+                        <label for="equipment">대여 장비</label>
+                        <input type="text" id="equipment" name="equipment" value="Trimble SX12 - 스캐닝 토탈 스테이션" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">신청자명 *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">회사/소속</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">연락처 *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">이메일 *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">대여 시작일 *</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="startTime">시작 시간 *</label>
+                            <select id="startTime" name="startTime" required>
+                                <option value="">선택하세요</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="endDate">반납 예정일 *</label>
+                            <input type="date" id="endDate" name="endDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endTime">반납 시간 *</label>
+                            <select id="endTime" name="endTime" required>
+                                <option value="">선택하세요</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 대여 시간 및 요금 계산 결과 -->
+                    <div id="rentalCalculation" class="rental-calculation" style="display: none;">
+                        <div class="calculation-box">
+                            <div class="calc-item">
+                                <span class="calc-label">총 대여시간:</span>
+                                <span class="calc-value" id="totalHours">0시간</span>
+                            </div>
+                            <div class="calc-item">
+                                <span class="calc-label">예상 대여요금:</span>
+                                <span class="calc-value" id="totalPrice">0원</span>
+                            </div>
+                        </div>
+                        <p class="calc-note" id="calcNote"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purpose">사용 목적</label>
+                        <textarea id="purpose" name="purpose" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">기타 요청사항</label>
+                        <textarea id="message" name="message" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">신청하기</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>오시는 길</h2>
+            <div class="contact-info">
+                <h3>SPARO Lab (인하대학교 공간정보연구실)</h3>
+                <p>📍 주소: 인천광역시 미추홀구 인하로 100</p>
+                <p>📞 전화: 010-3488-5952</p>
+                <p>📧 이메일: yg.cho@inha.ac.kr</p>
+                <p>🌐 웹사이트: <a href="http://sparo.inha.ac.kr" target="_blank">sparo.inha.ac.kr</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SPARO Lab - 인하대학교 공간정보연구실. All rights reserved.</p>
+            <p class="footer-contact">문의: yg.cho@inha.ac.kr | 010-3488-5952</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
